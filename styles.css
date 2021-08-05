@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: #777;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+p {
+    font-size: 1.5rem;
+}
+.nav ul {
+    margin: 0;
+}
+.nav li {
+    display: inline;
+}
+.nav a {
+    display: inline-block;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+}
+.nav-item {
+    position: relative;
+    
+}
+.nav-item::after {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 50%;
+    background-color: white;
+    bottom: -5px;
+    left: 25%;
+    transition: 250ms ease;
+    transform-origin: center;
+    transform: scale(0);
+}
+.nav-item:hover::after {
+    transform: scale(1);
+} 
+.main-nav {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: lighter;
+}
+.main-nav li {
+    padding: 0 2%;
+}
+header {
+    height: 100%;
+}
+.main-header {
+    background-color: rgba(0, 0, 0, 0.6);
+    background-image: url(picture/header.jpg);
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding-bottom: 30px;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.class-name {
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+    font-family: 'Style Script', cursive;
+    font-weight: lighter;
+    color: white;
+}
+.class-name-large {
+    font-size: 9em;
+}
+.content-section {
+    margin: 1em;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+    margin-bottom: 2em;
+}
+.footer-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+.section-header {
+    font-family: 'Montserrat', sans-serif;
+    color:  #333;
+    font-size: 2em;
+    border-bottom: 2px solid #333;
+    border-bottom-width: .25em;
+}
+.main-footer {
+    background-color: rgb(44, 44, 44);
+    color: white;
+    padding: .25 0;
+}
+.main-footer-container {
+    display: flex;
+    align-items: center;
+}
+.main-footer-container ul {
+    flex-grow: 1;
+    text-align: end;
+}
+.footer-nav li{
+    padding: 0 .5em;
+}
+.footer-nav img{
+    height: 30px;
+    width: 30px;
+}
+.btn {
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.67em;
+}
+.btn-header {
+    display: block;
+    margin: 0 auto;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    font-size: 4em;
+}
+.btn-header::after {
+    content: 'Where the journey started..';
+    position: absolute;
+    background-color: white;
+    color: #333;
+    font-size: 25px;
+    bottom: 461px;
+    left: 55%;
+    border: none;
+    width: 400px;
+    border-radius: 30px;
+    transform: scale(0);
+    transition: 500ms ease;
+    transform-origin: left;
+}
+.btn-header:hover::after {
+    transform: scale(1);
+}
+.btn-header:hover {
+    background-color: rgba(255, 255, 255, 0.3);;
+}
+.vac-row {
+    border-bottom: 1px solid #333;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+.vac-row:last-child {
+    border-bottom: none;
+}
+.vac-item {
+    display: inline-block;
+    margin-right: 1.9em;
+}
+.vac-time {
+    color: #555;
+    font-weight: bold;
+}
+.vac-city {
+    width: 24%;
+}
+.vac-resort {
+    width: 40%;
+}
+.vac-btn {
+    max-width: 30%;
+}
+.btn-primary {
+    color: white;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+.vac-btn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.member-block {
+    position: relative;
+    display: flex;
+    background-image: url(picture/no-profile.png);
+    height: 220px;
+    width: 220px;
+    background-size: cover;
+    flex-direction: column;
+    overflow: hidden;
+    transition: 250ms ease;
+    margin: 3ch;
+}
+.member-details {
+    background-color: #333;
+    margin-top: 220px;
+    padding: 10px;
+    transition: 250ms ease;
+}
+.member-name {
+    margin-top: -5px;
+    position: relative;
+    color: white;
+}
+.member-name::after {
+    position: absolute;
+    content: '';
+    bottom: -9px;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: white;
+    transition: 500ms ease;
+}
+.member-block:hover .member-name::after {
+    width: 60%;
+}
+.member-block:hover {
+    transform: scale(1.2);
+}
+.member-block:hover .member-details {
+    margin-top: 128px;
+}
+.member-btn {
+    background-color: white;
+    color: #333;
+    width: 50%;
+    border-radius: 30px;
+}
+.member-btn:hover {
+    background-color: #333;
+    color: white;
+}
+.member-blocks {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+
+}
+.member-block
+.mes-box-input img {
+    border-radius: 50%;
+    height: 40px;
+}
+
+.mes-box form {
+    display: flex;
+    flex-direction: column;
+}
+.mes-box-input {
+    display: flex;
+    padding: 20px;
+}
+.mes-box-input input {
+    flex: 1;
+    margin-left: 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+.mes-btn-send {
+    background-color: #333;
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: auto;
+}
+.mes-btn-send:hover {
+    background-color: #555;
+}
+.mes-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.form {
+    margin-bottom: 200px;
+}
