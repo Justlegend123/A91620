@@ -403,8 +403,8 @@ header {
     display: flex;
     flex-direction: column;
     background-color: white;
-    width: 40vw;
-    height: 50vh;
+    width: 30vw;
+    height: 40vh;
     align-items:center;
     overflow: auto;
     padding: 15px;
