@@ -1,3 +1,5 @@
+/*general settings*/
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
@@ -6,7 +8,7 @@
     font-family: 'Roboto', sans-serif;
     color: #777;
 }
-html, body {
+html > *{
     margin: 0;
     padding: 0;
     background-color: #fff;
@@ -14,37 +16,68 @@ html, body {
 p {
     font-size: 1.5rem;
 }
-.nav ul {
+.container > *{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+    margin-bottom: 2em;
+}
+.btn {
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.67em;
+}
+
+/*Navigation bar*/
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
+    padding: 0;
+}
+.nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 .nav li {
-    display: inline;
+    font-size: 1.5em;
+    list-style: none;
+    width: 10vw;
+    margin: 1em;
 }
 .nav a {
-    display: inline-block;
-    padding: 1em;
-    color: white;
+    color: #999;
     text-decoration: none;
+    transition: 250ms ease;
 }
 .nav-item {
     position: relative;
-    
+    transition: 250ms ease;
 }
 .nav-item::after {
     position: absolute;
     content: '';
     height: 3px;
-    width: 50%;
+    width: 100%;
     background-color: white;
     bottom: -5px;
-    left: 25%;
+    left: 0;
     transition: 250ms ease;
     transform-origin: center;
     transform: scale(0);
 }
+.nav-item.light::after,
 .nav-item:hover::after {
     transform: scale(1);
 } 
+.nav-item.light,
+.nav-item:hover {
+    color: white;
+}
 .main-nav {
     text-align: center;
     font-size: 1.1em;
@@ -53,6 +86,9 @@ p {
 .main-nav li {
     padding: 0 2%;
 }
+
+/*Header*/
+
 header {
     height: 100%;
 }
@@ -60,7 +96,6 @@ header {
     background-color: rgba(0, 0, 0, 0.6);
     background-image: url(picture/header.jpg);
     background-blend-mode: multiply;
-    background-size: cover;
     padding-bottom: 30px;
     height: 100%;
     background-attachment: fixed;
@@ -79,20 +114,14 @@ header {
 .class-name-large {
     font-size: 9em;
 }
-.content-section {
-    margin: 1em;
-}
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.5em;
-    margin-bottom: 2em;
-}
 .footer-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 1.5em;
 }
+
+/*Section*/
+
 .section-header {
     font-family: 'Montserrat', sans-serif;
     color:  #333;
@@ -100,10 +129,18 @@ header {
     border-bottom: 2px solid #333;
     border-bottom-width: .25em;
 }
+.content-section {
+    margin: 1em;
+}
+
+/*Footer*/
+
 .main-footer {
     background-color: rgb(44, 44, 44);
     color: white;
     padding: .25 0;
+    padding-top: .2em;
+    
 }
 .main-footer-container {
     display: flex;
@@ -120,12 +157,20 @@ header {
     height: 30px;
     width: 30px;
 }
-.btn {
-    cursor: pointer;
-    text-align: center;
-    vertical-align: middle;
-    padding: 0.67em;
+.footer-nav {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
+.ft {
+    transition: 250ms ease;
+}
+.ft:hover {
+    transform: scale(1.2);
+}
+/*Big circle buton at journey.html*/
+
 .btn-header {
     display: block;
     margin: 0 auto;
@@ -144,7 +189,7 @@ header {
     background-color: white;
     color: #333;
     font-size: 25px;
-    bottom: 461px;
+    bottom: 56vh;
     left: 55%;
     border: none;
     width: 400px;
@@ -152,6 +197,7 @@ header {
     transform: scale(0);
     transition: 500ms ease;
     transform-origin: left;
+    margin-left: 10px;
 }
 .btn-header:hover::after {
     transform: scale(1);
@@ -159,6 +205,12 @@ header {
 .btn-header:hover {
     background-color: rgba(255, 255, 255, 0.3);;
 }
+.main-header a {
+    text-decoration: none;
+}
+
+/*Board of vacations in journey.html*/
+
 .vac-row {
     border-bottom: 1px solid #333;
     padding-bottom: 1em;
@@ -183,6 +235,7 @@ header {
 }
 .vac-btn {
     max-width: 30%;
+    transition: 250ms ease;
 }
 .btn-primary {
     color: white;
@@ -191,8 +244,11 @@ header {
     font-weight: bold;
 }
 .vac-btn:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(1.2);
 }
+
+/*card of members in members.html*/
+
 .member-block {
     position: relative;
     display: flex;
@@ -251,10 +307,29 @@ header {
     justify-content: center;
 
 }
-.member-block
+.member-block.bg1 {
+    background-color: rgba(0, 0, 0, 0.3);
+    background-image: url(picture/minimalist.jpg);
+    background-blend-mode: multiply;
+}
+.member-block.bg2 {
+    background-color: rgba(0, 0, 0, 0.3);
+    background-image: url(picture/Dalat.JPG);
+    background-blend-mode: multiply;
+}
+.member-block.bg3 {
+    background-color: rgba(0, 0, 0, 0.3);
+    background-image: url(picture/A9\ \(1\).jpg);
+    background-blend-mode: multiply;
+}
+
+/*tweet box in index.html ( prototype )*/
+/*only for decoration purposes*/
+
 .mes-box-input img {
     border-radius: 50%;
     height: 40px;
+    width: 40px;
 }
 
 .mes-box form {
@@ -293,4 +368,177 @@ header {
 }
 .form {
     margin-bottom: 200px;
+}
+
+/*vacations.html*/
+
+.part {
+    padding-bottom: 100px;
+}
+.part h3 {
+    font-size: 2em;
+}
+
+/*Security*/
+
+.secure-section {
+    z-index: 999;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-image: url(picture/header.jpg);
+    background-blend-mode: multiply;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.question-panel {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 30vw;
+    height: 40vh;
+    align-items:center;
+    overflow: auto;
+    padding: 15px;
+}
+.question {
+    font-size: 2em;
+    font-weight:600;
+    color: rgb(0, 33, 71);
+    margin-bottom: 30px;
+    margin: 0 auto;
+}
+.question1 {
+    font-size: 1.5em;
+    font-weight:300;
+    color: rgb(0, 33, 71);
+    margin-bottom: 30px;
+    margin: 0 auto;
+}
+
+.secure-section.show {
+    display: none;
+}
+.login-form.show {
+    display: none;
+}
+.btn.login-btn.start.show {
+    display: none;
+}
+.btn.login-btn.key.show {
+    display: none;
+}
+.btn.login-btn.skip.show {
+    display: none;
+}
+.answer {
+    display: none;
+}
+.login-btn {
+    font-size: 20px;
+    border: none;
+    width: 370px;
+    margin: 5px;
+    background-color: #333;
+    color: white;
+    transition: 250ms ease;
+    margin-top: 23px;
+}
+.login-btn:hover {
+    background-color: rgb(0, 33, 71);
+    transform: scale(1.1);
+}
+.log-box-input input {
+    flex: 1;
+    font-size: 20px;
+    outline: none;
+    width: 370px;
+    height: 100px;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+.log-btn {
+    width: 10em;
+}
+.answers {
+    margin-bottom: 20px;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+#submit{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #333;
+    color: #fff;
+    border: 0px;
+    border-radius: 30px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin: 0 auto;
+}
+#submit::after {
+    display: none;
+    position: absolute;
+    top: -5px;
+    left: 150px;
+    content: 'All questions must correct';
+    color: red;
+    font-size: 15px;
+}
+#submit.show::after {
+    display:flex;
+}
+#submit:hover{
+    background-color: #777;
+}
+#submit.show2 {
+    display: none;
+}
+#quiz.show2 {
+    display: none;
+}
+#quiz {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    padding-top: 20px;
+}
+#returnBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(0, 33, 71);
+    cursor: pointer;
+    color: white;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+#returnBtn:hover {
+    background-color: rgb(35, 93, 158);
+}
+
+#returnBtn.show2 {
+    display: none;
 }
